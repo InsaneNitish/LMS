@@ -1,0 +1,16 @@
+{
+  "name": "lms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"cd LMS && npm run dev \" \"cd LMS-Backend && nodemon server.js \" "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.0.1",
+    "objectid": "^3.2.1"
+  }
+}
