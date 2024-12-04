@@ -1,24 +1,18 @@
 import mongoose from "mongoose";
 
 const transactionSchema = new mongoose.Schema({
-    transactionID: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    borrowerID: {
+    borrowerId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Borrower',
         required: true
     },
-    bookID: {
+    bookId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Book',
         required: true
     },
     borrowDate: {
         type: Date,
-        default: Date.now
     },
     returnDate: {
         type: Date,

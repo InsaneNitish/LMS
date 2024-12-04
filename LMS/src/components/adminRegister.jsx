@@ -92,7 +92,7 @@ const AdminRegister = () => {
       <div className="flex flex-row shadow-lg rounded-lg overflow-hidden">
         
         {/* Left Side - Image and Text */}
-        <div className="flex items-center justify-center w-[40%] bg-gradient-to-b from-blue-500 to-indigo-600 text-white p-8">
+        <div className="flex items-center justify-center w-[40%] bg-gradient-to-b from-blue-500 to-indigo-600 text-white p-8 bg-image">
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-4">Enter Admin Details for your Library</h2>
             <p className="text-lg">Fill in the details correctly.</p>

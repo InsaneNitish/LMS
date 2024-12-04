@@ -3,6 +3,7 @@ import axios from 'axios';
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from 'react-router-dom';
 import lms from "../assets/lms.jpg";
+import BackButton from './backButton';
 
 const CreateLibrary = () => {
   const [libraryData, setLibraryData] = useState({
@@ -30,12 +31,15 @@ const CreateLibrary = () => {
       navigate("/adminRegister");
     } catch (error) {
       toast.error('Error creating library');
+      console.log(error);
+      
     }
   };
 
   return (
     <div className="flex justify-center items-center w-screen h-[90vh] bg-gray-100">
       <Toaster position="top-right" />
+      <BackButton className='bg-blue-400'/>
       <div className="flex flex-row shadow-lg rounded-lg overflow-hidden">
         
         {/* Left Side - Image and Text */}

@@ -1,11 +1,6 @@
 import mongoose from "mongoose";
 
 const borrowerSchema = new mongoose.Schema({
-    borrowerID: {
-        type: String,
-        required: true,
-        unique: true
-    },
     name: {
         type: String,
         required: true,
@@ -26,9 +21,10 @@ const borrowerSchema = new mongoose.Schema({
         type: String,
         maxlength: 10
     },
-    address: {
-        type: String,
-        maxlength: 100
+    libraryId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Library',
+        required : true,
     }
 });
 

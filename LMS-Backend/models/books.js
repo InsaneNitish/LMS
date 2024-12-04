@@ -1,11 +1,6 @@
 import mongoose from "mongoose";
 
 const bookSchema = new mongoose.Schema({
-    bookID: {
-        type: String,
-        required: true,
-        unique: true
-    },
     title: {
         type: String,
         required: true,
@@ -33,6 +28,11 @@ const bookSchema = new mongoose.Schema({
         type: Number,
         required: true,
         min: 0
+    },
+    libraryId : {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Library',
+        required : true,
     }
 });
 

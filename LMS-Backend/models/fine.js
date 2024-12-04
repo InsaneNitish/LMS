@@ -1,17 +1,12 @@
 import mongoose from "mongoose";
 
 const fineSchema = new mongoose.Schema({
-    fineID: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    borrowerID: {
+    borrowerId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Borrower',
         required: true
     },
-    transactionID: {
+    transactionId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Transaction',
         required: true

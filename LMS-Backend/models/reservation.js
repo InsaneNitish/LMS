@@ -1,17 +1,17 @@
 import mongoose from "mongoose";
 
 const reservationSchema = new mongoose.Schema({
-    reservationID: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    borrowerID: {
+    borrowerId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Borrower',
         required: true
     },
-    bookID: {
+    libraryId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Library',
+        required: true
+    },
+    bookId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Book',
         required: true
@@ -22,7 +22,7 @@ const reservationSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ['Pending', 'Completed'],
+        enum: ['Pending', 'Rejected', 'Completed'],
         default: 'Pending'
     }
 });

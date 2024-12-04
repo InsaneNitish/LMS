@@ -2,44 +2,502 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-  }
-  
-  @keyframes erasing {
-    from { width: 100%; }
-    to { width: 0; }
-  }
-  
-  @keyframes blink-caret {
-    0%, 100% { border-color: transparent; }
-    50% { border-color: gray; }
-  }
-  
-  /* Combined typing and erasing animation */
-  .animate-typing {
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 2px solid gray;
-    animation: 
-      typing 3s steps(32, end) alternate,
-      blink-caret 0.7s step-end infinite,
-      erasing 3s steps(32, end)  alternate;
-    animation-fill-mode: forwards;
-    animation-delay: 0s, 10s, 9s;
-    animation-iteration-count: infinite;
-  }
-  
-  
-  /* Pattern Background */
-  .bg-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='60' cy='70' r='10' fill='%23d3d3d3'/%3E%3C/svg%3E");
-    background-size: 20px 20px;
-  }
 
-  .bg-image{
-    background-image: url('C:\\Users\nitis\OneDrive\Desktop\College\Sem-V\SE\Project\LMS\LMS\src\assets\lms.jpg');
-    object-fit: contain;
+
+@keyframes typing {
+  from {
+    width: 0;
   }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes erasing {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+@keyframes blink-caret {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: gray;
+  }
+}
+
+/* navbar */
+.navbar {
+  background: radial-gradient(
+    circle,
+    rgb(56, 3, 137) 0%,
+    rgb(119, 35, 255) 50%,
+    rgb(56, 3, 137) 100%
+  );
+}
+
+/* Home.css */
+.home-container {
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(
+    circle,
+    rgb(56, 3, 137) 0%,
+    rgb(119, 35, 255) 50%,
+    rgb(56, 3, 137) 100%
+  );
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 1s ease-in-out;
+  font-weight: bold;
+}
+
+.button-primary {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+.button-primary:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.button-secondary:hover {
+  background-color: white;
+  color: rgb(0, 0, 0);
+}
+
+.features-section {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* Features Section */
+.features-section {
+  font-family: "Arial", sans-serif;
+  padding: 60px 20px;
+  background: radial-gradient(
+    circle,
+    rgb(0, 0, 0) 0%,
+    rgb(45, 41, 51) 50%,
+    rgb(56, 3, 137) 100%
+  );
+  color: #fff;
+  text-align: center;
+}
+
+/* Features Container */
+.features-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between rows */
+}
+
+/* Feature Row Styling */
+.feature-row {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  transition: transform 0.3s, opacity 0.5s ease;
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+/* Animated Effect */
+.feature-row.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Text Styling */
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.feature-row h3 {
+  font-size: 1.8rem;
+  color: #ffd700; /* Golden color for headings */
+  margin-bottom: 10px;
+}
+
+.feature-row p {
+  font-size: 1.1rem;
+  color: #ddd; /* Light color for text */
+}
+
+/* Feature Row Hover */
+.feature-row:hover {
+  transform: translateY(-5px);
+}
+
+/* Feature Row Specific Colors */
+.feature-1 { background-color: rgba(64, 160, 255, 0.3); }
+.feature-2 { background-color: rgba(61, 213, 112, 0.3); }
+.feature-3 { background-color: rgba(255, 243, 205, 0.3); }
+.feature-4 { background-color: rgba(173, 59, 234, 0.3); }
+.feature-5 { background-color: rgba(209, 231, 221, 0.3); }
+.feature-6 { background-color: rgba(233, 65, 65, 0.3); }
+
+/* Home.css */
+
+/* Enhanced Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  color: #fff; /* Change text color for better visibility */
+}
+
+.hero-background {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='60' cy='70' r='10' fill='%23d3d3d3'/%3E%3C/svg%3E");
+  background-size: 20px 20px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+}
+
+.hero-title {
+  font-size: 4rem; /* Adjust size as needed */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+
+.hero-image {
+  margin-top: 20px;
+  max-width: 80%;
+  animation: float 3s ease-in-out infinite; /* Floating animation */
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ... existing feature styles ... */
+
+/* Combined typing and erasing animation */
+.animate-typing {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid gray;
+  animation: typing 3s steps(32, end) alternate,
+    blink-caret 0.7s step-end infinite, erasing 3s steps(32, end) alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 0s, 10s, 9s;
+  animation-iteration-count: infinite;
+}
+
+/* Pattern Background */
+.bg-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='60' cy='70' r='10' fill='%23d3d3d3'/%3E%3C/svg%3E");
+  background-size: 20px 20px;
+}
+
+.bg-image {
+  background-image: url("C:\\Users\nitis\OneDrive\Desktop\College\Sem-V\SE\Project\LMS\LMS\src\assets\lms.jpg");
+  object-fit: contain;
+}
+
+/* src/components/AdminDashboard.css */
+
+.animated-content {
+  color: #2462a5;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+.animated-text {
+  font-size: 4.5rem;
+  font-weight: 500;
+  animation: fadeInOut 3s ease infinite;
+  transition: transform 0.3s ease-in-out;
+  max-width: 80%;
+  margin: 0 auto;
+  color: #bd6767;
+}
+
+/* Floating Shapes */
+.floating-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.floating-box {
+  position: absolute;
+  background-color: rgba(126, 65, 65, 0.2);
+  animation: float 8s ease-in-out infinite;
+  border-radius: 4px;
+  opacity: 0.8;
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  top: 15%;
+  left: 10%;
+  animation-delay: 0s;
+  background-color: rgba(56, 96, 155, 0.1);
+}
+.circle1 {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  top: 45%;
+  left: 70%;
+  animation-delay: 0s;
+  background-color: rgba(157, 51, 127, 0.1);
+}
+.circle2 {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  top: 35%;
+  left: 20%;
+  animation-delay: 0s;
+  background-color: rgba(38, 103, 199, 0.1);
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  top: 35%;
+  left: 60%;
+  animation-delay: 2s;
+  background-color: rgba(100, 150, 200, 0.1);
+}
+
+.rectangle {
+  width: 80px;
+  height: 40px;
+  top: 70%;
+  left: 20%;
+  animation-delay: 4s;
+  background-color: rgba(200, 200, 150, 0.1);
+}
+
+.triangle {
+  width: 50px;
+  height: 50px;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 50px solid rgba(137, 82, 137, 0.1);
+  top: 70%;
+  right: 10%;
+  animation-delay: 6s;
+}
+
+.oval {
+  width: 70px;
+  height: 40px;
+  border-radius: 50%;
+  top: 50%;
+  left: 35%;
+  animation-delay: 3s;
+  background-color: rgba(150, 200, 150, 0.1);
+}
+
+.pentagon {
+  width: 50px;
+  height: 50px;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  top: 20%;
+  right: 30%;
+  animation-delay: 5s;
+  background-color: rgba(200, 150, 150, 0.1);
+}
+
+/* Animations */
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* src/components/Navbar.css */
+
+/* Navbar container styling */
+.navbar-container {
+  background-color: #1e1e2f;
+  border-radius: 12px;
+  padding: 0.5rem;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Top Section: Logo and Title */
+.navbar-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* Bottom Navigation Section */
+.navbar-bottom {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Navbar item styling */
+.navbar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #b0b0b5;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navbar-item .icon {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+/* Active state for the selected item */
+.navbar-item.active {
+  color: #ffffff;
+}
+
+.navbar-item.active .icon {
+  color: #4c8df5;
+}
+
+.navbar-item.active::before {
+  content: "";
+  width: 60%;
+  height: 3px;
+  background-color: #4c8df5;
+  position: absolute;
+  top: -6px;
+  border-radius: 2px;
+}
+
+/* Hover effect */
+.navbar-item:hover {
+  color: #ffffff;
+}
+
+.navbar-item:hover .icon {
+  color: #4c8df5;
+}
+

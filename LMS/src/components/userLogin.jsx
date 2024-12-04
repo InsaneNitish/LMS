@@ -1,18 +1,18 @@
-// src/components/AdminLogin.jsx
+// src/components/UserLogin.jsx
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
-const AdminLogin = () => {
+const UserLogin = () => {
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState({ email: "", password: "" });
 
   useEffect(() => {
-    if (localStorage.getItem("adminId")) {
+    if (localStorage.getItem("userId")) {
       toast.error("You are already logged in");
-      navigate("/adminDashboard");
+      navigate("/userDashboard");
     }
   }, [navigate]);
 
@@ -28,15 +28,15 @@ const AdminLogin = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/admin/login",
+        "http://localhost:8080/api/user/login",
         credentials
       );
       toast.success("Logged in successfully");
-      localStorage.setItem("adminToken", response.data.token);
-      localStorage.setItem("adminId", response.data.id);
+      localStorage.setItem("userToken", response.data.token);
+      localStorage.setItem("borrowerId", response.data.userId);
       localStorage.setItem("libraryId", response.data.libraryId);
-      localStorage.setItem("adminEmail", response.data.email);
-      navigate("/adminDashboard");
+      localStorage.setItem("userEmail", response.data.email);
+      navigate("/userDashboard");
     } catch (error) {
       toast.error("Login failed");
     }
@@ -47,11 +47,11 @@ const AdminLogin = () => {
       <Toaster position="top-right" />
       <div className="flex flex-row shadow-lg rounded-lg overflow-hidden">
         {/* Left Side - Image and Text */}
-        <div className="flex items-center justify-center w-[40%] bg-gradient-to-b from-blue-500 to-indigo-600 text-white p-8 bg-image">
+        <div className="flex items-center justify-center w-[40%] bg-gradient-to-b from-green-500 to-teal-600 text-white p-8 bg-image">
           <div className="text-center">
-            <h2 className="text-4xl font-bold mb-4">Admin Login</h2>
+            <h2 className="text-4xl font-bold mb-4">User Login</h2>
             <p className="text-lg">
-              Login to access library management resources and tools.
+              Login to explore library resources and manage your account.
             </p>
           </div>
         </div>
@@ -70,7 +70,7 @@ const AdminLogin = () => {
                 value={credentials.email}
                 onChange={handleChange}
                 placeholder="Enter your email"
-                className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                 required
               />
             </div>
@@ -84,32 +84,21 @@ const AdminLogin = () => {
                 value={credentials.password}
                 onChange={handleChange}
                 placeholder="Enter your password"
-                className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                 required
               />
             </div>
             <button
               type="submit"
-              className="w-full px-6 py-3 mt-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200"
+              className="w-full px-6 py-3 mt-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-200"
             >
               Login
             </button>
           </form>
-
-          {/* Create Library Option */}
-          <p className="mt-6 text-gray-600">
-            Don’t have an account?{" "}
-            <button
-              onClick={() => navigate("/createLibrary")}
-              className="text-blue-600 hover:underline"
-            >
-              Create a Library
-            </button>
-          </p>
         </div>
       </div>
     </div>
   );
 };
 
-export default AdminLogin;
+export default UserLogin;
